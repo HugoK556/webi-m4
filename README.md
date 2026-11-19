@@ -1,16 +1,21 @@
-# React + Vite
+<!-- MISION 4 - FULL CONTACT FORMS / HUGO COBOS GUTIERREZ INSO3ºB -->
+## Uso de IA
+Este no ha sido un proyecto muy complicado debido a que era algo sencillo de platear, solo hacer un formulario, por lo que mi uso de IA no ha sido muy grande. He usado IA principalmente a la hora de hacer 5 cosas:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. La primera organizarme los archivos, como dividirlos y como se conectan entre si.
+2. Despues, el JSON Server, todo lo que ha sido crearlo y como se usa
+3. Como mostrar los relojes creados en un lista ( con grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) )
+4. A la hora de editar relojes como hacer que se guarden los campos para no tener que introducir todo de nuevo, este ha sido un problema real que tenia he intentaba solucionar
+5. Por ultimo, el BONUS del ejercicio
 
-Currently, two official plugins are available:
+Estas 5 cosas son las cosas para las cuales he requesido el uso de IA como medio de apoyo para orientarme o para saber como hacer algo en concreto dependiendo de mi problema
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Ejemplos de prompts reales:
 
-## React Compiler
+* "Como creo JSON Server y lo uso"
+* "Como hago que si quiero editar un reloj me salgan los valores actuales en los campos del fomulario"
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Autopsia
+1. He organizado el formulario para que los campos de movimiento y material sean desplegables para elegir entre diferentes opciones, evitando tener que escribirlos manualmente y para no tener solo inputs y añadir diversidad.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. He conseguido con ayuda de la IA que al seleccionar un reloj para editarlo, sus datos aparezcan automaticamente en el formulario, sin tener que introducir todo de nuevo.

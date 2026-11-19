@@ -1,8 +1,12 @@
+// MISION 4 - FULL CONTACT FORMS / HUGO COBOS GUTIERREZ INSO3ºB
+
+// Listado de relojes
 function ListaRelojes({ relojes, onEditar, onEliminar }) {
   if (relojes.length === 0) {
     return <p>No hay relojes registrados.</p>
   }
 
+  // Devuelve el listado de relojes con su informacion y botones
   return (
     <div id="lista-relojes">
       {relojes.map((reloj) => (

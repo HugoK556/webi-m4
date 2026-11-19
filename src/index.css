@@ -1,3 +1,5 @@
+/* MISION 4 - FULL CONTACT FORMS / HUGO COBOS GUTIERREZ INSO3ºB */
+
 * {
   box-sizing: border-box;
 }
@@ -64,7 +66,7 @@ h3 {
 
 #lista-relojes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Crea automaticamente columnas de minimo 250px que se adaptan al espacio */
   gap: 15px;
 }
 

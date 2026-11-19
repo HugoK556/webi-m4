@@ -1,17 +1,20 @@
+// MISION 4 - FULL CONTACT FORMS / HUGO COBOS GUTIERREZ INSO3ºB
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { esquemaReloj } from './esquemas'
+import { useEffect } from 'react'
 
+// Formulario
 function FormularioReloj({ onGuardar, relojEditar, onCancelar }) {
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
-    resolver: zodResolver(esquemaReloj),
-    defaultValues: relojEditar || {
+    resolver: zodResolver(esquemaReloj), // esquema.js
+    defaultValues: {
       marca: '',
       modelo: '',
       anio: '',
@@ -21,11 +24,29 @@ function FormularioReloj({ onGuardar, relojEditar, onCancelar }) {
     },
   })
 
+  // Actualiza los campos cuando seleccionamos un reloj para editar
+  useEffect(() => {
+    if (relojEditar) {
+      reset(relojEditar)
+    } else {
+      reset({
+        marca: '',
+        modelo: '',
+        anio: '',
+        precio: '',
+        movimiento: '',
+        material: '',
+      })
+    }
+  }, [relojEditar, reset])
+
+  // Guarda los datos del formulario
   function guardar(datos) {
-    onGuardar(datos)
-    reset()
+    onGuardar(datos) // Envia los datos
+    reset() // Limpia el formulario
   }
 
+  // El formulario
   return (
     <form onSubmit={handleSubmit(guardar)}>
       <h2>{relojEditar ? 'Editar reloj' : 'Añadir reloj'}</h2>
@@ -66,7 +87,7 @@ function FormularioReloj({ onGuardar, relojEditar, onCancelar }) {
       </select>
       {errors.material && <p>{errors.material.message}</p>}
 
-      <button type="submit">
+      <button type="submit" disabled={isSubmitting}>
         {relojEditar ? 'Guardar cambios' : 'Añadir reloj'}
       </button>
 
